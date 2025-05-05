@@ -2,14 +2,14 @@ import time
 import os
 import numpy as np
 from scipy.sparse.linalg import spsolve
-from femcore import read_gmsh_mesh, define_material, prepare_boundary_conditions, visualize_displacement, compute_mesh_volume, assemble_global_stiffness
+from femcore import read_gmsh_mesh, define_material, prepare_boundary_conditions, compute_mesh_volume, assemble_global_stiffness
 
 
 def main():
     total_start = time.time()
     runtime_log = {}
 
-    path = "./meshes/fcc[r1=6.953_r2=5.488_r3=5.584_r4=1.751_r5=5.482_vol=85526.067].msh"
+    path = "./examples/fcc[r1=4.575_r2=9.407_r3=6.630_r4=6.979_r5=6.881_vol=122030.945].msh"
     scale = 1.0
 
     print("Importing mesh...")
@@ -95,13 +95,5 @@ def main():
         print(f"  {k:<24}: {v:.4f} sec")
     print(f"Total execution time: {time.time() - total_start:.4f} sec")
     
-    # visualize result
-    visualize_displacement(
-        nodes,
-        elements,
-        u,
-        show_edges=True,
-        scale_factor=100.0
-    )
 if __name__ == '__main__':
     main()
