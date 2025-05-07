@@ -15,7 +15,7 @@ def main():
     log = {}
 
     # Path to Gmsh-generated mesh
-    path = "./examples/fcc[r1=4.575_r2=9.407_r3=6.630_r4=6.979_r5=6.881_vol=122030.945].msh"
+    path = "./examples/fcc[r1=9.546_r2=9.117_r3=9.853_r4=3.733_r5=6.414_vol=175722.536].msh"
     scale = 1.0
 
     print("Loading mesh...")
