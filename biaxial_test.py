@@ -3,7 +3,9 @@ import os
 import numpy as np
 from scipy.sparse.linalg import spsolve
 from femcore import read_gmsh_mesh, define_material, prepare_boundary_conditions, compute_mesh_volume, assemble_global_stiffness
-
+import sys
+sys.path.append("./cpp/build")
+import read_gmsh_cpp
 
 def main():
     total_start = time.time()
@@ -12,14 +14,14 @@ def main():
     path = "./examples/fcc[r1=4.575_r2=9.407_r3=6.630_r4=6.979_r5=6.881_vol=122030.945].msh"
     scale = 1.0
 
-    print("Importing mesh...")
+    print("Importing mesh via C++ module...")
     t0 = time.time()
-    nodes, elements = read_gmsh_mesh(path, scale)
+    nodes, elements = read_gmsh_cpp.read_gmsh_tetra4_mesh(path, scale)
     runtime_log['mesh_import'] = time.time() - t0
     print(f"Mesh import time: {runtime_log['mesh_import']:.4f} sec")
     print(f"Number of nodes       : {nodes.shape[0]}")
     print(f"Number of elements    : {elements.shape[0]}")
-
+    
     node_xyz = nodes[:, 1:4]
     t0 = time.time()
     total_volume = compute_mesh_volume(node_xyz, elements)

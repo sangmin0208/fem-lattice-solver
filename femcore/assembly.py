@@ -1,6 +1,7 @@
 import numpy as np
 from scipy.sparse import coo_matrix
 from numba import njit, prange
+import time
 
 def define_material(E=1770.0, nu=0.3):
     """
@@ -91,7 +92,29 @@ def assemble_triplets_numba(nodes, elements, lambda_, mu):
     return rows, cols, data
 
 # Convert triplets to global sparse stiffness matrix (CSR format)
-def assemble_global_stiffness(nodes, elements, lambda_, mu):
-    rows, cols, data = assemble_triplets_numba(nodes, elements, lambda_, mu)
+
+def assemble_global_stiffness(nodes, elements, lambda_, mu, verbose=True):
+    n_elems = len(elements)
     n_dofs = 3 * nodes.shape[0]
-    return coo_matrix((data, (rows, cols)), shape=(n_dofs, n_dofs)).tocsr()
+
+    if verbose:
+        t_total = time.time()
+        t0 = time.time()
+
+    # --- triplet 생성 (calls compute_tetra4_stiffness_numba internally) ---
+    rows, cols, data = assemble_triplets_numba(nodes, elements, lambda_, mu)
+
+    if verbose:
+        t_triplets = time.time()
+        print(f"[assemble] Triplet generation time: {t_triplets - t0:.4f} sec")
+        print(f"[assemble]   Per element time: {(t_triplets - t0)/n_elems*1e6:.2f} µs/elem")
+
+    # --- sparse matrix 생성 ---
+    K = coo_matrix((data, (rows, cols)), shape=(n_dofs, n_dofs)).tocsr()
+
+    if verbose:
+        t_csr = time.time()
+        print(f"[assemble] CSR conversion time   : {t_csr - t_triplets:.4f} sec")
+        print(f"[assemble] Total stiffness time  : {t_csr - t_total:.4f} sec")
+
+    return K
