@@ -129,19 +129,6 @@ read_gmsh_cpp/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_gmsh_cpp.dir/build.make CMakeFiles/read_gmsh_cpp.dir/build
 .PHONY : read_gmsh_cpp/fast
 
-#=============================================================================
-# Target rules for targets named stiffness_cpp
-
-# Build rule for target.
-stiffness_cpp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 stiffness_cpp
-.PHONY : stiffness_cpp
-
-# fast build rule for target.
-stiffness_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stiffness_cpp.dir/build.make CMakeFiles/stiffness_cpp.dir/build
-.PHONY : stiffness_cpp/fast
-
 read_gmsh_tetra4.o: read_gmsh_tetra4.cpp.o
 .PHONY : read_gmsh_tetra4.o
 
@@ -166,30 +153,6 @@ read_gmsh_tetra4.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_gmsh_cpp.dir/build.make CMakeFiles/read_gmsh_cpp.dir/read_gmsh_tetra4.cpp.s
 .PHONY : read_gmsh_tetra4.cpp.s
 
-stiffness_cpp.o: stiffness_cpp.cpp.o
-.PHONY : stiffness_cpp.o
-
-# target to build an object file
-stiffness_cpp.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stiffness_cpp.dir/build.make CMakeFiles/stiffness_cpp.dir/stiffness_cpp.cpp.o
-.PHONY : stiffness_cpp.cpp.o
-
-stiffness_cpp.i: stiffness_cpp.cpp.i
-.PHONY : stiffness_cpp.i
-
-# target to preprocess a source file
-stiffness_cpp.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stiffness_cpp.dir/build.make CMakeFiles/stiffness_cpp.dir/stiffness_cpp.cpp.i
-.PHONY : stiffness_cpp.cpp.i
-
-stiffness_cpp.s: stiffness_cpp.cpp.s
-.PHONY : stiffness_cpp.s
-
-# target to generate assembly for a file
-stiffness_cpp.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stiffness_cpp.dir/build.make CMakeFiles/stiffness_cpp.dir/stiffness_cpp.cpp.s
-.PHONY : stiffness_cpp.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -199,13 +162,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... read_gmsh_cpp"
-	@echo "... stiffness_cpp"
 	@echo "... read_gmsh_tetra4.o"
 	@echo "... read_gmsh_tetra4.i"
 	@echo "... read_gmsh_tetra4.s"
-	@echo "... stiffness_cpp.o"
-	@echo "... stiffness_cpp.i"
-	@echo "... stiffness_cpp.s"
 .PHONY : help
 
 

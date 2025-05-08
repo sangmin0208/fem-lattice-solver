@@ -64,7 +64,6 @@ CMAKE_BINARY_DIR = /home/sangmin/fem-lattice-solver/cpp/build
 
 # The main recursive "all" target.
 all: CMakeFiles/read_gmsh_cpp.dir/all
-all: CMakeFiles/stiffness_cpp.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -73,7 +72,6 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/read_gmsh_cpp.dir/clean
-clean: CMakeFiles/stiffness_cpp.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -101,32 +99,6 @@ read_gmsh_cpp: CMakeFiles/read_gmsh_cpp.dir/rule
 CMakeFiles/read_gmsh_cpp.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_gmsh_cpp.dir/build.make CMakeFiles/read_gmsh_cpp.dir/clean
 .PHONY : CMakeFiles/read_gmsh_cpp.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/stiffness_cpp.dir
-
-# All Build rule for target.
-CMakeFiles/stiffness_cpp.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stiffness_cpp.dir/build.make CMakeFiles/stiffness_cpp.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stiffness_cpp.dir/build.make CMakeFiles/stiffness_cpp.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/sangmin/fem-lattice-solver/cpp/build/CMakeFiles --progress-num=3,4 "Built target stiffness_cpp"
-.PHONY : CMakeFiles/stiffness_cpp.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/stiffness_cpp.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangmin/fem-lattice-solver/cpp/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/stiffness_cpp.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/sangmin/fem-lattice-solver/cpp/build/CMakeFiles 0
-.PHONY : CMakeFiles/stiffness_cpp.dir/rule
-
-# Convenience name for target.
-stiffness_cpp: CMakeFiles/stiffness_cpp.dir/rule
-.PHONY : stiffness_cpp
-
-# clean rule for target.
-CMakeFiles/stiffness_cpp.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/stiffness_cpp.dir/build.make CMakeFiles/stiffness_cpp.dir/clean
-.PHONY : CMakeFiles/stiffness_cpp.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

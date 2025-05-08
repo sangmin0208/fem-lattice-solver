@@ -142,5 +142,4 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/read_gmsh_cpp.dir/DependInfo.cmake"
-  "CMakeFiles/stiffness_cpp.dir/DependInfo.cmake"
   )
