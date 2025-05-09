@@ -1,2 +1,2 @@
-# Empty dependencies file for read_gmsh_cpp.
+# Empty dependencies file for tetra4_fem_core.
 # This may be replaced when dependencies are built.

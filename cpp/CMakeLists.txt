@@ -1,12 +1,14 @@
 cmake_minimum_required(VERSION 3.11)
-project(read_fem_tetra4 LANGUAGES CXX)
+project(tetra4_fem_core LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Python3 REQUIRED COMPONENTS Interpreter Development)
 find_package(pybind11 REQUIRED)
+find_package(OpenMP REQUIRED)  
 
-pybind11_add_module(read_gmsh_cpp MODULE read_fem_tetra4.cpp)
+pybind11_add_module(tetra4_fem_core MODULE tetra4_fem_core.cpp)
 
-target_compile_options(read_gmsh_cpp PRIVATE -O3 -ffast-math -march=native)
+target_compile_options(tetra4_fem_core PRIVATE -O3 -march=native -fopenmp)
+target_link_libraries(tetra4_fem_core PRIVATE OpenMP::OpenMP_CXX) 

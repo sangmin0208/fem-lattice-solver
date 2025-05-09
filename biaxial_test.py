@@ -2,21 +2,22 @@ import time
 import os
 import numpy as np
 from scipy.sparse.linalg import spsolve
+from scipy.sparse import coo_matrix
 from femcore import read_gmsh_mesh, define_material, prepare_boundary_conditions, compute_mesh_volume, assemble_global_stiffness
 import sys
 sys.path.append("./cpp/build")
-import read_gmsh_cpp
+from tetra4_fem_core import read_gmsh_tetra4_mesh, assemble_tetra4_triplets
 
 def main():
     total_start = time.time()
     runtime_log = {}
 
-    path = "./examples/fcc[r1=3.254_r2=6.388_r3=8.775_r4=8.351_r5=8.427_vol=117916.853].msh"
+    path = "./examples/test1.msh"
     scale = 1.0
 
     print("Importing mesh via C++ module...")
     t0 = time.time()
-    nodes, elements = read_gmsh_cpp.read_gmsh_tetra4_mesh(path, scale)
+    nodes, elements = read_gmsh_tetra4_mesh(path, scale)
     runtime_log['mesh_import'] = time.time() - t0
     print(f"Mesh import time: {runtime_log['mesh_import']:.4f} sec")
     print(f"Number of nodes       : {nodes.shape[0]}")
@@ -36,7 +37,10 @@ def main():
 
     print("Assembling global stiffness matrix...")
     t0 = time.time()
-    K = assemble_global_stiffness(nodes, elements, lam, mu)
+    n_dofs = 3 * nodes.shape[0]
+    rows, cols, data = assemble_tetra4_triplets(nodes, elements, lam, mu)
+    K = coo_matrix((data, (rows, cols)), shape=(n_dofs, n_dofs)).tocsr()
+    #K = assemble_global_stiffness(nodes, elements, lam, mu)
     runtime_log['stiffness_assembly'] = time.time() - t0
     print(f"Stiffness assembly time: {runtime_log['stiffness_assembly']:.4f} sec")
     print(f"Global matrix shape    : {K.shape}, nonzeros: {K.nnz}")

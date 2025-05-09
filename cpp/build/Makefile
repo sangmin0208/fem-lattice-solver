@@ -117,41 +117,41 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named read_gmsh_cpp
+# Target rules for targets named tetra4_fem_core
 
 # Build rule for target.
-read_gmsh_cpp: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 read_gmsh_cpp
-.PHONY : read_gmsh_cpp
+tetra4_fem_core: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tetra4_fem_core
+.PHONY : tetra4_fem_core
 
 # fast build rule for target.
-read_gmsh_cpp/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_gmsh_cpp.dir/build.make CMakeFiles/read_gmsh_cpp.dir/build
-.PHONY : read_gmsh_cpp/fast
+tetra4_fem_core/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetra4_fem_core.dir/build.make CMakeFiles/tetra4_fem_core.dir/build
+.PHONY : tetra4_fem_core/fast
 
-read_fem_tetra4.o: read_fem_tetra4.cpp.o
-.PHONY : read_fem_tetra4.o
+tetra4_fem_core.o: tetra4_fem_core.cpp.o
+.PHONY : tetra4_fem_core.o
 
 # target to build an object file
-read_fem_tetra4.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_gmsh_cpp.dir/build.make CMakeFiles/read_gmsh_cpp.dir/read_fem_tetra4.cpp.o
-.PHONY : read_fem_tetra4.cpp.o
+tetra4_fem_core.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetra4_fem_core.dir/build.make CMakeFiles/tetra4_fem_core.dir/tetra4_fem_core.cpp.o
+.PHONY : tetra4_fem_core.cpp.o
 
-read_fem_tetra4.i: read_fem_tetra4.cpp.i
-.PHONY : read_fem_tetra4.i
+tetra4_fem_core.i: tetra4_fem_core.cpp.i
+.PHONY : tetra4_fem_core.i
 
 # target to preprocess a source file
-read_fem_tetra4.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_gmsh_cpp.dir/build.make CMakeFiles/read_gmsh_cpp.dir/read_fem_tetra4.cpp.i
-.PHONY : read_fem_tetra4.cpp.i
+tetra4_fem_core.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetra4_fem_core.dir/build.make CMakeFiles/tetra4_fem_core.dir/tetra4_fem_core.cpp.i
+.PHONY : tetra4_fem_core.cpp.i
 
-read_fem_tetra4.s: read_fem_tetra4.cpp.s
-.PHONY : read_fem_tetra4.s
+tetra4_fem_core.s: tetra4_fem_core.cpp.s
+.PHONY : tetra4_fem_core.s
 
 # target to generate assembly for a file
-read_fem_tetra4.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/read_gmsh_cpp.dir/build.make CMakeFiles/read_gmsh_cpp.dir/read_fem_tetra4.cpp.s
-.PHONY : read_fem_tetra4.cpp.s
+tetra4_fem_core.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tetra4_fem_core.dir/build.make CMakeFiles/tetra4_fem_core.dir/tetra4_fem_core.cpp.s
+.PHONY : tetra4_fem_core.cpp.s
 
 # Help Target
 help:
@@ -161,10 +161,10 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... read_gmsh_cpp"
-	@echo "... read_fem_tetra4.o"
-	@echo "... read_fem_tetra4.i"
-	@echo "... read_fem_tetra4.s"
+	@echo "... tetra4_fem_core"
+	@echo "... tetra4_fem_core.o"
+	@echo "... tetra4_fem_core.i"
+	@echo "... tetra4_fem_core.s"
 .PHONY : help
 
 

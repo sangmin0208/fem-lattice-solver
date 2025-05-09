@@ -5,10 +5,10 @@ import time
 import numpy as np
 from scipy.sparse import coo_matrix
 from femcore.assembly import assemble_global_stiffness, define_material
-from read_gmsh_cpp import read_gmsh_tetra4_mesh, assemble_tetra4_triplets
+from tetra4_fem_core import read_gmsh_tetra4_mesh, assemble_tetra4_triplets
 
 # 설정
-path = "./examples/fcc[r1=3.254_r2=6.388_r3=8.775_r4=8.351_r5=8.427_vol=117916.853].msh"
+path = "./examples/test1.msh"
 scale = 1.0
 E, nu = 775.43, 0.3
 lam, mu = define_material(E, nu)
