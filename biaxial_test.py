@@ -11,7 +11,7 @@ def main():
     total_start = time.time()
     runtime_log = {}
 
-    path = "./examples/fcc[r1=4.575_r2=9.407_r3=6.630_r4=6.979_r5=6.881_vol=122030.945].msh"
+    path = "./examples/fcc[r1=3.254_r2=6.388_r3=8.775_r4=8.351_r5=8.427_vol=117916.853].msh"
     scale = 1.0
 
     print("Importing mesh via C++ module...")

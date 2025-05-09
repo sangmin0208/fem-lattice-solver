@@ -19,7 +19,7 @@ def main():
     runtime_log = {}
 
     # Path to Gmsh-generated mesh
-    path = "./examples/fcc[r1=4.575_r2=9.407_r3=6.630_r4=6.979_r5=6.881_vol=122030.945].msh"
+    path = "./examples/fcc[r1=1.246_r2=1.384_r3=1.581_r4=1.792_r5=1.037_vol=6360.910].msh"
     scale = 1.0
 
     print("Importing mesh via C++ module...")

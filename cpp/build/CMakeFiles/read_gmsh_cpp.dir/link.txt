@@ -1,0 +1,1 @@
+/usr/bin/g++ -fPIC -O3 -DNDEBUG -flto -shared  -o read_gmsh_cpp.cpython-311-x86_64-linux-gnu.so CMakeFiles/read_gmsh_cpp.dir/read_fem_tetra4.cpp.o 

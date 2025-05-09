@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/read_gmsh_cpp.dir/read_gmsh_tetra4.cpp.o"
-  "CMakeFiles/read_gmsh_cpp.dir/read_gmsh_tetra4.cpp.o.d"
+  "CMakeFiles/read_gmsh_cpp.dir/read_fem_tetra4.cpp.o"
+  "CMakeFiles/read_gmsh_cpp.dir/read_fem_tetra4.cpp.o.d"
   "read_gmsh_cpp.cpython-311-x86_64-linux-gnu.so"
   "read_gmsh_cpp.pdb"
 )
