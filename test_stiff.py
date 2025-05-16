@@ -8,7 +8,7 @@ from femcore.assembly import assemble_global_stiffness, define_material
 from tetra4_fem_core import read_gmsh_tetra4_mesh, assemble_tetra4_triplets
 
 # 설정
-path = "./examples/test1.msh"
+path = "./examples/fcc[r1=7.278_r2=7.774_r3=8.421_r4=4.396_r5=4.088_vol=121607.202].msh"
 scale = 1.0
 E, nu = 775.43, 0.3
 lam, mu = define_material(E, nu)

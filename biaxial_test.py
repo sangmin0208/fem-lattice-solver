@@ -3,7 +3,7 @@ import os
 import numpy as np
 from scipy.sparse.linalg import spsolve
 from scipy.sparse import coo_matrix
-from femcore import read_gmsh_mesh, define_material, prepare_boundary_conditions, compute_mesh_volume, assemble_global_stiffness
+from femcore import read_gmsh_mesh, define_material, prepare_boundary_conditions, compute_mesh_volume, assemble_global_stiffness, visualize_displacement
 import sys
 sys.path.append("./cpp/build")
 from tetra4_fem_core import read_gmsh_tetra4_mesh, assemble_tetra4_triplets
@@ -12,7 +12,7 @@ def main():
     total_start = time.time()
     runtime_log = {}
 
-    path = "./examples/test1.msh"
+    path = "./examples/fcc[r1=4.975_r2=9.530_r3=9.895_r4=9.350_r5=9.309_vol=176254.897].msh"
     scale = 1.0
 
     print("Importing mesh via C++ module...")
@@ -100,6 +100,6 @@ def main():
     for k, v in runtime_log.items():
         print(f"  {k:<24}: {v:.4f} sec")
     print(f"Total execution time: {time.time() - total_start:.4f} sec")
-    
+
 if __name__ == '__main__':
     main()

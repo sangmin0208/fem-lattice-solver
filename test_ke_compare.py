@@ -6,7 +6,7 @@ from femcore.assembly import compute_tetra4_stiffness_numba, define_material
 from read_gmsh_cpp import read_gmsh_tetra4_mesh, compute_tetra4_stiffness_cpp
 
 # 경로 및 재료 상수 설정
-path = "./examples/fcc[r1=3.254_r2=6.388_r3=8.775_r4=8.351_r5=8.427_vol=117916.853].msh"
+path = "./examples/fcc[r1=7.278_r2=7.774_r3=8.421_r4=4.396_r5=4.088_vol=121607.202].msh"
 scale = 1.0
 E, nu = 775.43, 0.3
 lam, mu = define_material(E, nu)
